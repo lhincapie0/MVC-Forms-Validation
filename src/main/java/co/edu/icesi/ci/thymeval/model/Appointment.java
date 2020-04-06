@@ -28,7 +28,7 @@ public class Appointment {
 	private long id;
 	
 	@NotNull
-	@FutureOrPresent(message="La fecha debe ser el dÃ­a de hoy o fechas futuras.")
+	@FutureOrPresent(message="La fecha debe ser el día de hoy o fechas futuras.")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate date;
 	
@@ -38,9 +38,9 @@ public class Appointment {
 	
 	@NotNull(message="Se requiere especificar el nombre del paciente.")
 	@ManyToOne
-	private User patient;
+	private UserApp patient;
 	
 	@NotNull(message="Se requiere especificar el nombre del doctor.")
 	@ManyToOne
-	private User doctor;
+	private UserApp doctor;
 }

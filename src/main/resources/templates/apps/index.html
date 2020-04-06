@@ -39,9 +39,13 @@
 								<td th:text="${app.time}"></td>
 								<td th:text="${app.doctor.name}"></td>
 								<td th:text="${app.patient.name}"></td>
-								<td><a th:href="@{/apps/edit/{id}(id=${app.id})}"
-									class="btn btn-primary"><i class="fas fa-calendar ml-2"></i></a></td>
-								<td><a th:href="@{/apps/del/{id}(id=${app.id})}"
+								<td><a sec:authorize="hasRole('ADMIN') or hasRole('doctor')" th:href="@{/apps/edit/{id}(id=${app.id})}"
+									class="btn btn-primary"><i class="fas fa-calendar ml-2"></i></a>
+									
+
+									
+									</td>
+								<td><a sec:authorize="hasRole('ADMIN') or hasRole('doctor')" th:href="@{/apps/del/{id}(id=${app.id})}"
 									class="btn btn-primary"><i
 										class="fas fa-calendar-times ml-2"></i></a></td>
 							</tr>

@@ -23,8 +23,8 @@
 				<form action="#" th:action="@{/users/add2/}" th:object="${user}"
 					method="post">
 
-					<p hidden th:text="*{username}"></p>
-					<p hidden  th:text="*{password}"></p>
+					<p th:text="*{username}"></p>
+					<p th:text="*{password}"></p>
 
 					<div class="col">
 

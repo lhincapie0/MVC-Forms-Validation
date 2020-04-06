@@ -20,37 +20,37 @@ import lombok.Data;
 
 @Entity
 @Data
-public class User {
+public class UserApp {
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long id;
 	
-	@NotBlank(groups= User1.class)
-	@Size(message="La contraseña debe tener minimo ocho caracteres", min=8, groups = User1.class)
+	@NotBlank(groups=User1.class)
+	@Size(message="La contrase�a debe tener minimo ocho caracteres", min=8, groups = User1.class)
 	private String password;
 	
-	@NotBlank(groups= {User1.class, EditValidation.class})
-	@Size(message="El username debe tener minimo tres caracteres", min=3, groups={User1.class, EditValidation.class})
+	@NotBlank(groups=User1.class)
+	@Size(message="El username debe tener minimo tres caracteres", min=3, groups=User1.class)
 	private String username;
 	
-	@NotBlank(groups= {User2.class, EditValidation.class})
-	@Size(message="El nombre debe tener minimo dos caracteres", min=2, groups={User2.class, EditValidation.class})
+	@NotBlank(groups=User2.class)
+	@Size(message="El nombre debe tener minimo dos caracteres", min=2, groups=User2.class)
 	private String name;
 	
-	@NotBlank(groups = { User2.class, EditValidation.class})
-	@Email(message= "Debes ingresar un correo valido", groups ={User2.class, EditValidation.class})
+	@NotBlank(groups = User2.class)
+	@Email(message= "Debes ingresar un correo valido", groups = User2.class)
 	private String email;
 	
-	@NotNull(groups= {User2.class, EditValidation.class})
+	@NotNull(groups=User2.class)
 	private UserType type;
 	
-	@NotNull(groups= {User1.class, EditValidation.class})
+	@NotNull(groups=User1.class)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Past(message="La fecha debe ser anterior a hoy.", groups = {User1.class, EditValidation.class})
+	@Past(message="La fecha debe ser anterior a hoy.", groups = User1.class)
 	private LocalDate birthDate;
 	
-	@NotNull(groups= {User2.class, EditValidation.class})
+	@NotNull(groups=User2.class)
 	private UserGender gender;
 	
 //	@OneToMany

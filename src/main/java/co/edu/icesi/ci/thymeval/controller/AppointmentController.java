@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import co.edu.icesi.ci.thymeval.model.Appointment;
-import co.edu.icesi.ci.thymeval.model.User;
 import co.edu.icesi.ci.thymeval.service.AppointmentService;
 import co.edu.icesi.ci.thymeval.service.AppointmentServiceInt;
 import co.edu.icesi.ci.thymeval.service.UserService;
